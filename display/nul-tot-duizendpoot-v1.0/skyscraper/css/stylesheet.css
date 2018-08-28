@@ -1,0 +1,170 @@
+@charset "UTF-8";
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+figure {
+	margin:0;
+	padding:0;
+	position: relative;
+	display: none;
+	background-color:#8A4849;
+	width:160px;
+	height:600px;
+	overflow: hidden;
+}
+
+figure a.link {
+	width:150px;
+	height:auto;
+	display:block;
+	opacity:1.0;
+	background-color:#E7AA40;
+	padding:10px 12px;
+	text-decoration: none;
+	position:absolute;
+	bottom:30px;
+	left:50%;
+	background-image:url(../images/btntext.svg);
+	background-repeat: no-repeat;
+	background-size:80%;
+	background-position:center center;
+	box-shadow:2px 2px 2px rgba(0,0,0,0.8);
+	border:1px solid #ccb139;
+	border-radius: 3px;
+	transition:transform 0.2s ease-out;
+	transform:translate(-50%, 0) scale(0.8,0.8);
+}
+
+figure:hover a.link, figure a.link:hover, a.link.hover {
+	transform:translate(-50%, 0) scale(0.9,0.9);
+
+}
+
+figure img {
+	width:auto;
+	height:100%;
+	right:-200%;
+	bottom:0;
+	position: absolute;
+}
+
+figure .title {
+	display:block;
+	position: absolute;
+	z-index: 2;
+	left:50%;
+	top:45%;
+	width:100%;
+	transform: translate(-50%, -50%);
+}
+
+
+figure .title .title-top {
+	display:flex;
+	flex-direction: row;
+	width:80%;
+	margin:0 auto;
+	opacity:0.0;
+	transform: translate(11%, 0);
+	transition: all 0.5s ease;
+}
+
+figure .title.show .title-top {
+	transform: translate(0%, 0);
+	opacity: 1.0;
+}
+
+
+figure .title-top svg {
+	fill:rgba(255,255,255,0.8);
+}
+
+figure .title-top svg {
+	width:90%;
+	flex:1 0px;
+}
+
+figure .title-top svg:nth-child(2) {
+	margin:0 0 0 10px;
+	width:100%;
+}
+
+figure .title svg.title-middle {
+	fill:rgba(255,255,255,0.8);
+	transform:translate(11%, 0%);
+	margin:0 auto;
+	width:25%;
+	display: block;
+	opacity: 0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.blowup svg.title-middle {
+	opacity: 1.0;
+	transform:translate(0%, 0%);
+}
+
+figure .title svg.title-bottom {
+	fill:rgba(255,255,255,0.8);
+	transform:translate(-11%,50%);
+	margin:0 auto;
+	width:90%;
+	display: block;
+	opacity: 0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.blowup svg.title-bottom {
+	opacity: 1.0;
+	transform:translate(0%,50%);
+}
+
+figure .title svg.date {
+	fill:#e74142;
+	transform:translate(1%, 60%);
+	margin:60px auto 0px auto;
+	width:125%;
+	display: block;
+	opacity:0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.showDate svg.date {
+	transform:translate(1%, 0%);
+	opacity:1.0;
+}
+
+
+figure svg.logo {
+	position: absolute;
+	z-index: 1;
+	right:50%;
+	transform:translate(50%,0);
+	top:20px;
+	width:120px;
+	fill:rgba(255,255,255,0.7);
+}
+
+canvas#output {
+	position: absolute;
+	z-index: 1;
+	display: block;
+	bottom:120px;
+	left:-265px;
+	-webkit-filter: saturate(120%) hue-rotate(-10deg) contrast(120%);
+    filter: saturate(100%) hue-rotate(-10deg) contrast(120%);
+	pointer-events: none;
+	transform:scale(1.4,1.4);
+}
+

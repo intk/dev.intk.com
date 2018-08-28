@@ -1,0 +1,133 @@
+@charset "UTF-8";
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	overflow: hidden;
+}
+
+div.wrapper, div.wrapper .background {
+	width:300px;
+	height:50px;
+}
+
+div.wrapper .background {
+	position: absolute;
+	z-index:1;
+	margin:0;
+	padding:0;
+}
+
+div.wrapper .background figure {
+	margin:0;
+	padding:0;
+	width:100%;
+	height:100%;
+	position: relative;
+	overflow:hidden;
+	background-color: #BC2224;
+}
+
+div.wrapper .background figure img {
+	position: absolute;
+	bottom:-120px;
+	transform:scale(1.0,1.0)translate(-0%,30%)rotate(0deg);
+	transition:all 1.5s ease-out;
+}
+
+div.wrapper .background.show figure img {
+	transform:scale(0.8,0.8)translate(-42%,20%)rotate(-3deg);
+}
+
+div.wrapper .background.overview figure img {
+	transform:scale(0.8,0.8)translate(-40%,15%)rotate(-6deg);
+	transition:all 3s ease-out;
+}
+
+
+a.link {
+	width:120px;
+	height:auto;
+	display:block;
+	opacity:1.0;
+	background-color:#6abfa8;
+	padding:8px 10px;
+	text-decoration: none;
+	position:absolute;
+	bottom:10px;
+	right:-10px;
+	background-image:url(../images/btntext.svg);
+	background-repeat: no-repeat;
+	background-size:80%;
+	background-position:center center;
+	box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+	border:1px solid #84CAB7;
+	border-radius: 0px;
+	z-index: 100;
+	transition:transform 0.2s ease-out;
+	transform:scale(0.7,0.7);
+}
+
+div.wrapper:hover a.link, div.wrapper a.link:hover, a.link.hover {
+	transform:scale(0.8,0.8);
+}
+
+svg.title {
+	width:30%;
+	height:auto;
+	left:29%;
+	top:38%;
+	position: absolute;
+	z-index: 100;
+}
+
+svg.title g path {
+	display: none;
+}
+
+svg.title rect {
+	width:0;
+	opacity: 0.0;
+}
+
+svg.subtitle {
+	width:30%;
+	height:auto;
+	left:29%;
+	top:38%;
+	position: absolute;
+	z-index: 100;
+}
+
+svg.subtitle g path {
+	display: none;
+}
+
+svg.subtitle rect {
+	width:0;
+	opacity: 0.0;
+}
+
+svg.logo {
+	position: absolute;
+	z-index: 1;
+	left:2px;
+	bottom:-5px;
+	width:80px;
+}
+

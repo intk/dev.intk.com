@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	background-color:#0b0c08;
+	width:300px;
+	height:250px;
+	overflow: hidden;
+}
+
+
+
+div.wrapper figure {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	margin:0;
+	padding:0;
+	top:0;
+	position: absolute;
+	opacity: 0.0;
+	transition:all 0.4s ease-out;
+}
+
+/*Tytgat*/
+div.wrapper figure.tytgat {
+	z-index:1;
+}
+
+div.wrapper figure.tytgat img {
+	width:100%;
+	height:auto;
+	position: absolute;
+	transform: translate(-5%,0%)scale(1.3,1.3);
+	transition:all 5s ease;
+}
+
+div.wrapper figure.tytgat.show img {
+	transform: translate(-5%,5%)scale(1.3,1.3);
+}
+
+/*Diederix*/
+div.wrapper figure.diederix {
+	z-index:2;
+}
+div.wrapper figure.diederix img {
+	width:100%;
+	height:auto;
+	position: absolute;
+	transform: translate(-7%,-10%)scale(1.15,1.15);
+	transition:all 5s ease;
+}
+
+div.wrapper figure.diederix.show img {
+	transform: translate(-7%,-20%)scale(1.15,1.15);
+}
+
+div.wrapper figure.show {
+	opacity: 1.0;
+}
+
+div.wrapper figure figcaption {
+	position: absolute;
+	bottom:10%;
+	right:20px;
+	margin:0;
+	padding:0;
+	z-index: 2;
+	font-size:35px;
+	text-transform: uppercase;
+	transform: scale(0.8,0.8);
+}
+
+div.wrapper figure figcaption span {
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	letter-spacing: 0.8px;
+	font-weight:bold;
+	line-height: 1.3em;
+	transform:translate(-50%,0%);
+	opacity:0.0;
+	transition:all 0.4s ease-out;
+}
+
+div.wrapper figure figcaption span.show {
+	transform:translate(0%,0%);
+	opacity:1.0;
+}
+
+
+div.wrapper figure figcaption span.date {
+	font-size: 0.45em;
+	color:#eada18;
+	opacity:0.0;
+	transform:translate(0%,50%);
+}
+
+div.wrapper figure figcaption span.date.show {
+	opacity:1.0;
+	transform:translate(0%,-0%);
+}
+
+
+div.wrapper figure figcaption span.title {
+	font-size: 1.0em;
+	color:#fff;
+}
+
+div.wrapper figure figcaption span.posttitle, div.wrapper figure figcaption span.pretitle {
+	margin:0;
+	font-size: 0.65em;
+	color:#000;
+	padding:2px 8px;
+	display: inline-block;
+	background-color:#fff;
+	opacity:0.0;
+	transform:translate(0%,-50%);
+}
+
+div.wrapper figure figcaption span.posttitle.show, div.wrapper figure figcaption span.pretitle.show {
+	transform:translate(0%,0);
+	opacity:1.0;
+}
+
+
+div.wrapper figure.tytgat.last {
+	width:50%;
+	left:0;
+}
+
+div.wrapper figure.diederix.last {
+	width:50%;
+	right:0;
+}
+
+div.wrapper figure.tytgat.show.last img {
+	transform: translate(-5%,0%)scale(1.4,1.4);
+	transform-origin:top left;
+}
+
+div.wrapper figure.diederix.last img {
+	transform: translate(-7%,-10%)scale(1.3,1.3);
+}
+
+div.wrapper figure.last:after {
+	content:"";
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	position: absolute;
+	z-index: 1;
+	background:linear-gradient(-10deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.0) 80%);
+}
+
+div.wrapper figure.last figcaption {
+	transform:scale(0.65,0.65)translate(0,-15%);
+	display: none;
+}
+
+
+div.wrapper .logo {
+	position: absolute;
+	right:20px;
+	top:20px;
+	z-index: 100;
+	width:30%;
+	height:100%;
+	display: block;
+	background-image:url(../images/logo.svg);
+	background-repeat: no-repeat;
+	background-size:100%;
+	transform-origin: center;
+	opacity: 0.0;
+	transition:all 0.2s ease-out;
+}
+
+div.wrapper .logo {
+	opacity: 1.0;
+}
+
+span.link {
+	width:auto;
+	height:auto;
+	background-color:transparent;
+	padding:14px 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+	position:absolute;
+	bottom:10%;
+	left:50%;
+	font-family: Arial, Helvetica, sans-serif;
+	display: block;
+	letter-spacing: 0.8px;
+	font-weight:500;
+	border-radius: 0px;
+	border:2px solid #fff;
+	color:#fff;
+	z-index: 100;
+	transition:all 0.2s ease-out;
+	opacity: 0.0;
+	transform:translate(-50%, 0)scale(0.8,0.8);
+	text-align: center;
+}
+
+
+div.wrapper:hover span.link, div.wrapper span.link:hover, span.link.hover {
+	transform:translate(-50%, 0)scale(0.9,0.9);
+}
+
+
+span.link.show {
+	opacity: 1.0;
+}

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	background-color:#00a284;
+	width:200px;
+	height:200px;
+	overflow: hidden;
+}
+
+div.wrapper figure {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	margin:0;
+	padding:0;
+}
+
+div.wrapper figure img {
+	height:110%;
+	width:auto;
+	position: absolute;
+	top:-20px;
+	left:-50px;
+	transform:scale(1.5,1.5);
+	transition: all 5s ease;
+}
+
+div.wrapper figure img.show  {
+	transform:scale(1.0,1.0);
+}
+
+div.wrapper:hover figure img.show {
+	transform:scale(1.2,1.2);
+
+}
+
+div.wrapper figure:after {
+	content:"";
+	width:100%;
+	height:100%;
+	display: block;
+	position: absolute;
+	z-index: 1;
+	background: linear-gradient(45deg, rgba(0,0,0,1), rgba(0,0,0,0.7) 20%,  rgba(0,0,0,0.7), rgba(0,0,0,0), rgba(0,0,0,0));
+	transition:all 0.5s ease-out;
+}
+
+svg.headings {
+	position: absolute;
+	z-index: 1;
+	left:15px;
+	bottom:55px;
+	width:72%;
+	fill:#FFF;
+}
+
+svg.headings .middle, svg.headings .top, svg.headings .bottom {
+	transform:translate(-100%, 0);
+	transition:all 0.2s ease-out;
+	opacity: 0.0;
+
+}
+
+div.smh svg.headings .middle, div.sth svg.headings .top, div.sbh svg.headings .bottom {
+	transform:translate(0%, 0);
+	opacity: 1.0;
+}
+
+a.link {
+	width:125px;
+	height:auto;
+	opacity:0.0;
+	background-color:#9dcc3b; /*282340*/
+	padding:3px 3px;
+	text-decoration: none;
+	position:absolute;
+	bottom:15px;
+	left:15px;
+	background-image:url(../images/cta.svg);
+	background-repeat: no-repeat;
+	background-size:80%;
+	background-position:center center;
+	border-radius: 5px;
+	z-index: 100;
+	transition:all 0.2s ease-out;
+}
+
+div.webtext {
+	display: none;
+	width:125px;
+	height:10px;
+	padding:0;
+	text-decoration: none;
+	position:absolute;
+	bottom:20px;
+	right:15px;
+	background-image:url(../images/webtext.svg);
+	background-repeat: no-repeat;
+	background-size:100%;
+	background-position:center center;
+	z-index: 100;
+}
+
+a.link.show {
+	opacity: 1.0;
+}
+
+div.wrapper:hover a.link, div.wrapper a.link:hover, a.link.hover {
+	transform:scale(1.1,1.1);
+}

@@ -1,0 +1,254 @@
+@charset "UTF-8";
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	background-color:#00a284;
+	background-image:url(../images/bg.jpg);
+	width:336px;
+	height:480px;
+	overflow: hidden;
+}
+
+img.sculpture {
+	width:80%;
+	height:auto;
+	position: absolute;
+	left:0%;
+	bottom:-20px;
+	transform:translate(11%, 50%)rotate(-20deg);
+	opacity:0.0;
+	transition: all 1.0s ease;
+	z-index: 1;
+	
+}
+
+
+a.link {
+	width:150px;
+	height:auto;
+	display:block;
+	opacity:1.0;
+	background-color:#00f48a; /*282340*/
+	padding:10px 12px;
+	text-decoration: none;
+	position:absolute;
+	bottom:30px;
+	right:30px;
+	background-image:url(../images/btntext.svg);
+	background-repeat: no-repeat;
+	background-size:80%;
+	background-position:center center;
+	box-shadow:2px 2px 5px rgba(0,0,0,0.5);
+	border-radius: 0px;
+	z-index: 100;
+	transition:transform 0.2s ease-out;
+}
+
+div.wrapper:hover a.link, div.wrapper a.link:hover, a.link.hover {
+	transform:scale(1.1,1.1);
+}
+
+div.title {
+	width:100%;
+	height:60%;
+	left:30px;
+	top:10%;
+	position: absolute;
+		
+	
+}
+
+div.title-top {
+	width:80%;
+	height:50%;
+	display:block;
+	background-color:transparent;
+	background-image:url(../images/museumnacht.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	top:0px;
+	left:0px;
+	transform:translate(11%, 0);
+	opacity:0.0;
+	transition: all 0.5s ease;
+	z-index: 2;
+}
+
+
+div.title-middle {
+	width:63%;
+	height:50%;
+	display:block;
+	background-color:transparent;
+	background-image:url(../images/wereldmuseum-text.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	top:13%;
+	left:0px;
+	opacity:0.0;
+	transform:translate(0, -11%);
+	transition: all 0.5s ease;
+	z-index: 1;
+}
+
+
+div.title-bottom {
+	width:75%;
+	height:50%;
+	display:block;
+	background-color:transparent;
+	background-image:url(../images/date.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	top:25%;
+	left:0px;
+	transform:translate(11%, 0);
+	opacity:0.0;
+	transition: all 0.5s ease;
+	z-index: 3;
+}
+
+
+div.date {
+	width:65%;
+	height:50px;
+	display:block;
+	background-color:transparent;
+	background-image:url(../images/time.svg);
+	background-repeat: no-repeat;
+	position: absolute;
+	top:36%;
+	left:0;
+	opacity:0.0;
+	transform:translate(-11%, 0%);
+	transition: all 0.5s ease;
+	z-index: 1;
+}
+
+img.sculpture.show, div.title-top.show, div.title-middle.show, div.title-bottom.show, div.date.show {
+	opacity:1.0;
+	transform:translate(0px, 0);
+}
+
+img.sculpture.show {
+	transform:translate(0px, 0%)rotate(-12deg);
+
+}
+
+div.date.show {
+	transform:translate(-5px, 0);
+
+}
+
+
+
+/*
+
+figure img {
+	width:100%;
+	height:auto;
+}
+
+figure .title {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	left:50%;
+	top:5%;
+	width:90%;
+	transform: translate(-50%, 0);
+}
+
+
+figure .title .title-top {
+	display:flex;
+	flex-direction: row;
+	width:50%;
+	margin:0 auto;
+	opacity:0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.show .title-top {
+	transform: translate(-11%, 0);
+	opacity: 1.0;
+}
+
+
+figure .title-top svg {
+	fill:rgba(255,255,255,0.8);
+}
+
+figure .title-top svg {
+	width:100%;
+	flex:1 0px;
+}
+
+figure .title-top svg:nth-child(2) {
+	margin:0 0 0 15px;
+	width:100%;
+}
+
+figure .title .title-top svg:nth-child(2) {
+	width:45%;
+	margin:0 0px 0 15px;
+	transform:translate(0,-22%) scale(1.0,1.0);
+	flex:none;
+}
+
+figure .title svg.title-bottom {
+	fill:rgba(255,255,255,0.8);
+	transform:translate(-11%,-22%);
+	margin:0 auto;
+	width:70%;
+	display: block;
+	opacity: 0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.blowup svg.title-bottom {
+	opacity: 1.0;
+	transform:translate(0%,-22%);
+}
+
+figure .title svg.date {
+	fill:#e74142;
+	transform:translate(-40%, 40%);
+	margin:0 auto;
+	width:38%;
+	display: block;
+	opacity:0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.showDate svg.date {
+	transform:translate(-40%, 0%);
+	opacity:1.0;
+}
+
+*/
+svg.logo {
+	position: absolute;
+	z-index: 1;
+	left:20px;
+	bottom:20px;
+	width:100px;
+	fill:rgba(255,255,255,0.7);
+}
+

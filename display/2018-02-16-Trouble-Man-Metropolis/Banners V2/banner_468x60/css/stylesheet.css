@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Tusker Grotesk';
+    src: url('../fonts/TuskerGrotesk-2600Semibold.woff') format('woff');
+	font-weight: 600;
+    font-style: normal;
+}
+
+
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	background-color:#d3eaf8;
+	width:468px;
+	height:60px;
+	overflow: hidden;
+}
+
+div.wrapper figure {
+	width:100%;
+	height:auto;
+	overflow: hidden;
+	margin:0;
+	padding:0;
+	display: none;
+}
+
+div.wrapper figure.show {
+	display: block;
+}
+
+div.wrapper figure figcaption {
+	position: absolute;
+	top:14px;
+	margin:0;
+	padding:0;
+	z-index: 2;
+}
+div.wrapper figure:nth-child(3) figcaption {
+	transform: translate(0,-27%);
+}
+
+div.wrapper figure figcaption div.row {
+	margin:0;
+	padding:0px 20px;
+	font-family: 'Tusker Grotesk';
+	font-size:25px;
+	color:#000;
+	text-transform:uppercase;
+	text-align: left;
+	line-height: 1.4em;
+	letter-spacing: 1.2px;
+	transform: scale(1, 0.67);
+  	-webkit-transform: scale(1, 0.67); /* Safari and Chrome */
+  	-moz-transform: scale(1, 0.67); /* Firefox */
+  	-ms-transform: scale(1, 0.67); /* IE 9+ */
+  	-o-transform: scale(1, 0.67); /* Opera */
+}
+
+div.wrapper figure figcaption.first div.row span {
+	opacity: 0;
+}
+
+div.wrapper figure figcaption div.row span.title {
+	font-size:0.6em;
+	text-decoration:underline;
+	display: block;
+	padding:0 0 0px 0;
+}
+
+div.wrapper figure figcaption div.row.white {
+	color:#fff;
+}
+
+
+
+div.wrapper figure figcaption span.underline {
+	text-decoration:underline;
+}
+
+div.wrapper figure figcaption div.row span.underline.show, div.wrapper figure figcaption div.row span.show  {
+	opacity: 1.0;
+}
+
+div.wrapper figure figcaption.bar {
+	position: absolute;
+	top:inherit;
+	bottom:20px;
+	height:30px;
+	width:100%;
+	background-color:transparent;
+
+}
+
+div.wrapper figure figcaption.bar div.holder {
+	height:30px;
+	overflow:hidden;
+	white-space: nowrap;
+	
+
+}
+
+div.wrapper figure figcaption.bar div.holder div.row {
+	width:auto;
+	display: inline-block;
+	color:#fff;
+	font-size:30px;
+}
+
+div.wrapper figure img {
+	height:auto;
+	width:100%;
+	position: absolute;
+	bottom:-160px;
+	left:0px;
+	transform:scale(1.0,1.0);
+	transition: all 2s ease;
+}
+
+
+.wrapper figure:nth-child(3):after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(1,1,1,0.8) 0%, rgba(1,1,1,0.8) 40%, rgba(1,1,1,0.0) 50%);
+    transition: all 0.5s ease-out;
+}
+
+svg.logo {
+	position: absolute;
+	z-index: 1;
+	right:15px;
+	bottom:15px;
+	width:70px;
+	fill:#000;
+}
+
+.wrapper.white svg.logo {
+	display: none;
+}
+
+a.link {
+	width:100px;
+	height:auto;
+	background-color:#e7522a; /*282340*/
+	padding:10px 12px;
+	text-decoration: none;
+	position:absolute;
+	bottom:10px;
+	right:0px;
+	background-image:url(../images/cta.svg);
+	background-repeat: no-repeat;
+	background-size:85%;
+	background-position:center center;
+	border-radius: 0px;
+	z-index: 100;
+	transition:all 0.2s ease-out;
+	opacity:0.0;
+	transform:scale(0.8,0.8);
+
+}
+
+a.link.show {
+	opacity: 1.0;
+}
+
+div.wrapper:hover a.link, div.wrapper a.link:hover, a.link.hover {
+	transform:scale(0.9,0.9);
+}

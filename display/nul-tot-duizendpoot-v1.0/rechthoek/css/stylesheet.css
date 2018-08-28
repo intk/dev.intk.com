@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+figure {
+	margin:0;
+	padding:0;
+	position: relative;
+	display: none;
+	background-color:#8A4849;
+	width:580px;
+	height:400px;
+	overflow: hidden;
+}
+
+figure a.link {
+	width:150px;
+	height:auto;
+	display:block;
+	opacity:1.0;
+	background-color:#E7AA40;
+	padding:10px 12px;
+	text-decoration: none;
+	position:absolute;
+	bottom:30px;
+	right:30px;
+	background-image:url(../images/btntext.svg);
+	background-repeat: no-repeat;
+	background-size:80%;
+	background-position:center center;
+	box-shadow:2px 2px 2px rgba(0,0,0,0.8);
+	border:1px solid #ccb139;
+	border-radius: 3px;
+	transition:transform 0.2s ease-out;
+}
+
+figure:hover a.link, figure a.link:hover, a.link.hover {
+	transform:scale(1.1,1.1);
+
+}
+
+figure img {
+	width:100%;
+	height:auto;
+}
+
+figure .title {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	left:50%;
+	top:5%;
+	width:90%;
+	transform: translate(-50%, 0);
+}
+
+
+figure .title .title-top {
+	display:flex;
+	flex-direction: row;
+	width:50%;
+	margin:0 auto;
+	opacity:0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.show .title-top {
+	transform: translate(-11%, 0);
+	opacity: 1.0;
+}
+
+
+figure .title-top svg {
+	fill:rgba(255,255,255,0.8);
+}
+
+figure .title-top svg {
+	width:100%;
+	flex:1 0px;
+}
+
+figure .title-top svg:nth-child(2) {
+	margin:0 0 0 15px;
+	width:100%;
+}
+
+figure .title .title-top svg:nth-child(2) {
+	width:45%;
+	margin:0 0px 0 15px;
+	transform:translate(0,-22%) scale(1.0,1.0);
+	flex:none;
+}
+
+figure .title svg.title-bottom {
+	fill:rgba(255,255,255,0.8);
+	transform:translate(-11%,-22%);
+	margin:0 auto;
+	width:70%;
+	display: block;
+	opacity: 0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.blowup svg.title-bottom {
+	opacity: 1.0;
+	transform:translate(0%,-22%);
+}
+
+figure .title svg.date {
+	fill:#e74142;
+	transform:translate(-40%, 40%);
+	margin:0 auto;
+	width:38%;
+	display: block;
+	opacity:0.0;
+	transition: all 0.5s ease;
+}
+
+figure .title.showDate svg.date {
+	transform:translate(-40%, 0%);
+	opacity:1.0;
+}
+
+
+figure svg.logo {
+	position: absolute;
+	z-index: 1;
+	left:20px;
+	bottom:20px;
+	width:120px;
+	fill:rgba(255,255,255,0.7);
+}
+
+canvas#output {
+	position: absolute;
+	z-index: 1;
+	display: block;
+	bottom:10px;
+	left:-30px;
+	-webkit-filter: saturate(120%) hue-rotate(-10deg) contrast(120%);
+    filter: saturate(100%) hue-rotate(-10deg) contrast(120%);
+	pointer-events: none;
+}
+

@@ -1,0 +1,237 @@
+@charset "UTF-8";
+
+
+body {
+	margin:0;
+	padding:0;
+}
+
+a.hidden {
+	outline:none;
+	text-decoration: none;
+	cursor: pointer;
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+div.wrapper {
+	margin:0;
+	padding:0;
+	position: relative;
+	display:block;
+	background-color:#d3eaf8;
+	width:160px;
+	height:600px;
+	overflow: hidden;
+}
+
+div.wrapper figure {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	margin:0;
+	padding:0;
+	display: none;
+	transition:all 2.0s ease-out;
+}
+
+div.wrapper figure.show {
+	display: block;
+}
+
+div.wrapper figure figcaption {
+	position: absolute;
+	top:0;
+	margin:0;
+	padding:0;
+	z-index: 2;
+}
+
+div.wrapper figure figcaption div.row {
+	margin:0;
+	padding:0px 22px;
+	font-family: 'Tusker Grotesk';
+	font-size:40px;
+	color:#000;
+	text-transform:uppercase;
+	text-align: left;
+	line-height: 1.9em;
+	letter-spacing: 1.2px;
+	transform: scale(1, 0.9);
+  	-webkit-transform: scale(1, 0.9); /* Safari and Chrome */
+  	-moz-transform: scale(1, 0.9); /* Firefox */
+  	-ms-transform: scale(1, 0.9); /* IE 9+ */
+  	-o-transform: scale(1, 0.9); /* Opera */
+}
+
+div.wrapper figure:nth-child(3) figcaption {
+	transform: translate(5%,0);
+}
+
+
+
+div.wrapper figure figcaption div.row span {
+	display: block;
+	background-position:left;
+	background-repeat: no-repeat;
+	background-size:auto;
+	width:5em;
+	height:0px auto;
+	padding:0px 0 0 0;
+}
+
+div.wrapper figure figcaption.first div.row {
+	padding:20px;
+	transform: translate(0,10%);
+}
+
+div.wrapper figure figcaption.first div.row span {
+	opacity: 0;
+}
+
+div.wrapper figure figcaption.first div.row span.top {
+	background-image:url(../fonts/sadettin.svg);
+	width:9em;
+	padding:10px;
+}
+
+div.wrapper figure figcaption.first div.row span.middle {
+	background-image:url(../fonts/het-nationale-theater.svg);
+	width:9em;
+	padding:20px;
+}
+
+div.wrapper figure figcaption.first div.row span.underline {
+	background-image:url(../fonts/presenteren.svg);
+}
+
+div.wrapper figure figcaption.bar div.holder div.row span {
+	display:inline-block;
+	background-position:top;
+	background-repeat: no-repeat;
+	background-size:auto;
+	width:7em;
+	height:0px auto;
+	padding:0px 0 0 0;
+	background-image:url(../fonts/second.svg);
+}
+
+div.wrapper figure figcaption div.row span.title {
+	padding:0px 0 0 0;
+	width:2.5em;
+	background-image:url(../fonts/title.svg);
+}
+
+div.wrapper figure figcaption div.row span.subtitle {
+	padding:10px 0 0 0;
+	width:3em;
+	background-image:url(../fonts/third.svg);
+}
+
+div.wrapper figure figcaption div.row.white {
+	color:#fff;
+	padding:20px 10px;
+	font-size:50px;
+}
+
+div.wrapper figure figcaption div.row span.underline.show, div.wrapper figure figcaption div.row span.show  {
+	opacity: 1.0;
+}
+
+div.wrapper figure figcaption.bar {
+	position: absolute;
+	top:inherit;
+	bottom:22%;
+	height:58px;
+	width:100%;
+	background-color: #fff;
+
+}
+
+div.wrapper figure figcaption.bar div.holder {
+	height:58px;
+	overflow:hidden;
+	white-space: nowrap;	
+
+}
+
+div.wrapper figure figcaption.bar div.holder div.row {
+	width:auto;
+	display: inline-block;
+	font-size:40px;
+	padding:0.25em;
+}
+
+div.wrapper figure img {
+	height:100%;
+	width:auto;
+	position: absolute;
+	top:10px;
+	left:-270%;
+	transform:scale(1.4,1.4);
+	opacity: 1.0;
+	transition:all 2.0s ease-out;
+}
+
+
+div.wrapper figure:nth-child(3) img {
+	top:150px;
+	transform:scale(1.0,1.0);
+}
+
+.wrapper figure:nth-child(3):after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(1,1,1,1.0) 0%, rgba(1,1,1,1.0) 30%, rgba(1,1,1,0.0) 50%);
+    transition: all 0.5s ease-out;
+}
+
+svg.logo {
+	position: absolute;
+	z-index: 1;
+	right:15px;
+	bottom:15px;
+	width:50%;
+	fill:#000;
+}
+
+.wrapper.white svg.logo {
+	fill:#fff;
+}
+
+a.link {
+	width:100px;
+	height:auto;
+	background-color:#e7522a; /*282340*/
+	padding:10px 12px;
+	text-decoration: none;
+	position:absolute;
+	bottom:20%;
+	left:18px;
+	background-image:url(../images/cta.svg);
+	background-repeat: no-repeat;
+	background-size:85%;
+	background-position:center center;
+	border-radius: 0px;
+	z-index: 100;
+	transition:all 0.2s ease-out;
+	opacity:0.0;
+	transform:scale(1.0,1.0);
+}
+
+a.link.show {
+	opacity: 1.0;
+}
+
+div.wrapper:hover a.link, div.wrapper a.link:hover, a.link.hover {
+	transform:scale(1.1,1.1);
+}
+
+div.wrapper figure:nth-child(2) img.show {
+	transform:scale(1.5,1.5);
+}
